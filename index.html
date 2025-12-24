@@ -15,14 +15,13 @@ body {
     text-align: center;
 }
 
-/* Center card */
 .card {
     position: relative;
     top: 50%;
     transform: translateY(-50%);
     margin: auto;
     width: 90%;
-    max-width: 500px;
+    max-width: 520px;
     background: rgba(255,255,255,0.15);
     padding: 40px;
     border-radius: 20px;
@@ -47,7 +46,7 @@ p {
 }
 
 button {
-    margin-top: 25px;
+    margin: 12px;
     padding: 12px 25px;
     font-size: 18px;
     border: none;
@@ -62,12 +61,11 @@ button:hover {
     background: #ff1e3c;
 }
 
-/* Surprise message */
 #surprise {
     display: none;
     margin-top: 20px;
     font-size: 22px;
-    animation: fadeIn 2s ease-in;
+    animation: fadeIn 1.5s ease-in;
 }
 
 /* Animations */
@@ -105,8 +103,8 @@ button:hover {
 
 <body>
 
-<!-- 🎶 Background Music -->
-<audio autoplay loop>
+<!-- 🎶 Audio -->
+<audio id="bgMusic" loop>
     <source src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3" type="audio/mpeg">
 </audio>
 
@@ -116,20 +114,27 @@ button:hover {
 
     <p>
         May this Christmas bring you happiness,<br>
-        warmth, love, and beautiful moments ✨
+        love, warmth, and beautiful moments ✨
     </p>
 
+    <button onclick="playMusic()">🎶 Play Music</button>
     <button onclick="showSurprise()">🎁 Click for Surprise</button>
 
     <div id="surprise">
-        You are truly special,<br>
-        and I’m grateful to have you in my life 💖<br>
-        — From Sid
+        This Christmas, I just want to say thank you,<br>
+        Thank you for every smile, every memory, and every moment we’ve shared ❤️🥹🫂💋,<br>
+        I’m lucky to call you my best friend 🎄❤️,<br>
+        — From S
     </div>
 </div>
 
 <script>
-// Surprise button
+// Play music
+function playMusic() {
+    document.getElementById("bgMusic").play();
+}
+
+// Surprise message
 function showSurprise() {
     document.getElementById("surprise").style.display = "block";
 }
